@@ -33,7 +33,7 @@ class App extends Component {
                 return Promise.reject(error);
             }
 
-            this.setState({ data: data })
+            this.setState({ dataArray: data })
             // console.log(data)
         })
         .catch(error => {
