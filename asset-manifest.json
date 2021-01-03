@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/mailmodo-screening/static/css/main.ab7136cd.chunk.css",
-    "main.js": "/mailmodo-screening/static/js/main.bf9a92e8.chunk.js",
-    "main.js.map": "/mailmodo-screening/static/js/main.bf9a92e8.chunk.js.map",
-    "runtime-main.js": "/mailmodo-screening/static/js/runtime-main.d4a9750d.js",
-    "runtime-main.js.map": "/mailmodo-screening/static/js/runtime-main.d4a9750d.js.map",
+    "main.css": "/mailmodo-screening/static/css/main.385e3c27.chunk.css",
+    "main.js": "/mailmodo-screening/static/js/main.0ce2f7d0.chunk.js",
+    "main.js.map": "/mailmodo-screening/static/js/main.0ce2f7d0.chunk.js.map",
+    "runtime-main.js": "/mailmodo-screening/static/js/runtime-main.b6579b92.js",
+    "runtime-main.js.map": "/mailmodo-screening/static/js/runtime-main.b6579b92.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/mailmodo-screening/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.e38efe0c.chunk.js": "/mailmodo-screening/static/js/2.e38efe0c.chunk.js",
-    "static/js/2.e38efe0c.chunk.js.map": "/mailmodo-screening/static/js/2.e38efe0c.chunk.js.map",
-    "static/js/3.4407d549.chunk.js": "/mailmodo-screening/static/js/3.4407d549.chunk.js",
-    "static/js/3.4407d549.chunk.js.map": "/mailmodo-screening/static/js/3.4407d549.chunk.js.map",
+    "static/js/2.30c85bc7.chunk.js": "/mailmodo-screening/static/js/2.30c85bc7.chunk.js",
+    "static/js/2.30c85bc7.chunk.js.map": "/mailmodo-screening/static/js/2.30c85bc7.chunk.js.map",
+    "static/js/3.178041dd.chunk.js": "/mailmodo-screening/static/js/3.178041dd.chunk.js",
+    "static/js/3.178041dd.chunk.js.map": "/mailmodo-screening/static/js/3.178041dd.chunk.js.map",
     "index.html": "/mailmodo-screening/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/mailmodo-screening/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.ab7136cd.chunk.css.map": "/mailmodo-screening/static/css/main.ab7136cd.chunk.css.map",
-    "static/js/2.e38efe0c.chunk.js.LICENSE.txt": "/mailmodo-screening/static/js/2.e38efe0c.chunk.js.LICENSE.txt"
+    "static/css/main.385e3c27.chunk.css.map": "/mailmodo-screening/static/css/main.385e3c27.chunk.css.map",
+    "static/js/2.30c85bc7.chunk.js.LICENSE.txt": "/mailmodo-screening/static/js/2.30c85bc7.chunk.js.LICENSE.txt",
+    "static/media/destination.5336278d.svg": "/mailmodo-screening/static/media/destination.5336278d.svg",
+    "static/media/warehouse.147c9c0b.svg": "/mailmodo-screening/static/media/warehouse.147c9c0b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d4a9750d.js",
+    "static/js/runtime-main.b6579b92.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.e38efe0c.chunk.js",
-    "static/css/main.ab7136cd.chunk.css",
-    "static/js/main.bf9a92e8.chunk.js"
+    "static/js/2.30c85bc7.chunk.js",
+    "static/css/main.385e3c27.chunk.css",
+    "static/js/main.0ce2f7d0.chunk.js"
   ]
 }
