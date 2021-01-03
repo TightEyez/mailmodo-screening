@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import  Header from './component/header';
 import TableView from './component/table'; 
 import StatusBoard from './component/statusBoard';
+import ShowTrack from './component/showTrack';
 
 
 class App extends Component {
@@ -20,44 +21,64 @@ class App extends Component {
         DEX: 0,
         NFI: 0
       },
-      selected: "DEL"
+      selected: "DEL",
+      isShowTrack: false,
+      currentOrder: null
      }
   }
 
   handleEvent = (data) => {
     console.log(data)
-    let selectedList  = this.state.dataArray.filter((st) => st.current_status_code === data.element)
+    let selectedList  = this.state.dataArray.filter((st) => st.current_status_code === data)
     this.setState({dumyArray: selectedList})
+    this.setState({selected: data})
+    console.log(this.state)
   }
-  style = {}
+
+  showTrack = (_id) => {
+    let select = this.state.dumyArray.filter((st) => st._id === _id)
+
+    this.setState({currentOrder: select[0]})
+    this.setState({isShowTrack: true})
+    // console.log(this.state)
+  }
+
+  hideTrack = () => {  this.setState({isShowTrack: false})}
+
+  style = {
+    hide: {
+      color: 'blue'
+    }
+  }
 
 
   render() { 
-
     
     return (
     <div>
       <Header />
       <div className="row">
         <div className="col-12">
-            {/* {  Object.entries(this.state.status).forEach(([key, Value]) => <li>wor</li> )} */}
-            <StatusBoard clickHandle={this.handleEvent} statusList={this.state.status}/> 
+            <StatusBoard selectedCard={this.state.selected} clickHandle={this.handleEvent} statusList={this.state.status}/> 
 
 
 
         </div>
 
-        <div className="col-4">
-          <div className="card">
-
+        <div className="col-12 col-sm-4">
+          <div className="card p-2">
+            { this.state.isShowTrack&&this.state.currentOrder.scan? 
+              <span>
+              <p className="pointer" style={this.style.hide} onClick={this.hideTrack}>Hide</p>
+              <ShowTrack track={this.state.currentOrder} />
+              </span> 
+              : "Click to show"
+            }
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-sm-8">
           <div>
-           
-              <TableView key='1' dummy={this.state.dumyArray}/>
-
-
+              <TableView handleShowTrack={this.showTrack} key='1' dummy={this.state.dumyArray}/>
           </div>
         </div>
       </div>
@@ -71,6 +92,7 @@ class App extends Component {
         headers: { 'Content-Type': 'application/json', 'Authorization': "Bearer tTU3gFVUdP" },
         body: JSON.stringify({ 	"email": "suyashshrivastava651@gmail.com"})
     };
+
     fetch('https://f0ztti2nsk.execute-api.ap-south-1.amazonaws.com/v1/consignment/fetch', requestOptions)
         .then(async response => {
             const data = await response.json();

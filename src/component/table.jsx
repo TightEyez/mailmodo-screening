@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
+// just use (useEffect). every change will be logged with current value
+// import { useEffect } from "react";
 
  
 
 class TableView extends Component {
     constructor() {
         super()
+        this.state = {  }
     }
 
-    state = {  }
+    componentDidMount() {
+      this.updateWindowDimensions()
+    }
+
+    updateWindowDimensions = () => {
+      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      console.log(this.state)
+    };
+
+
     render() { 
-        console.log(this.props.dummy)
+
+
+
+      const styles = {
+        tableRow: {
+          fontSize: this.state.width<786?'12px':'14px'
+        }
+      }
+        // console.log(this.props.dummy)
         return ( 
-            <React.Fragment>
+            <div className="table-responsive">
             <table className="table">
              <thead className="thead-dark">
-               <tr>
+               <tr style={styles.tableRow}>
                  <th scope="col">#</th>
                  <th scope="col">Awbno</th>
                  <th scope="col">Carrier</th>
@@ -28,11 +48,13 @@ class TableView extends Component {
              </thead>
              <tbody>
                  {this.props.dummy.map((list,index) => 
-                 <tr>
+                 <tr style={styles.tableRow} >
                      <th scope="row">{index+1}</th>
-                     <td>{list.awbno}</td>
+                     <td className="pointer" onClick={() => this.props.handleShowTrack(list._id)}>{list.awbno}</td>
                      <td>{list.carrier}</td>
-                     <td>{list.from ? list.from: ""}</td>
+                     <td>
+                       {list.from ? list.from: ""}  
+                     </td>
                      <td>{list.to ? list.to: ""}</td>
                      <td>{list.pickup_date}</td>
                      <td>{list.extra_fields? list.extra_fields.expected_delivery_date: ""}</td>
@@ -44,7 +66,7 @@ class TableView extends Component {
              </tbody>
            </table>
 
-       </React.Fragment>
+       </div>
          );
     }
 }

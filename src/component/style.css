@@ -1,0 +1,17 @@
+.small {
+    font-size:  10px;
+}
+
+.scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll .card {
+    display: inline-block;
+    float: none;
+  }
+
+  .pointer {
+      cursor: pointer;
+  }

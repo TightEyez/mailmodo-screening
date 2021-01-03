@@ -1,17 +1,22 @@
-const StatusBoard = (props) => {
-    // console.log(props.statusList)
-    Object.keys(props.statusList).map(element => { console.log(element)})
-    return (     
-        <div className="d-flex p-2 justify-content-center">
+import './style.css'
 
-        
-            {
-                Object.keys(props.statusList).map((element) => {
+const StatusBoard = (props) => {
+    console.log(props.selectedCard)
+    // Object.keys(props.statusList).map(element => { console.log(element)})
+    let innerWidth = window.innerWidth
+    let style = {
+
+    } 
+    return (     
+        <div className={"d-flex p-2 scroll " +(innerWidth<768?'':'justify-content-center')}>
+
+           {
+                Object.entries(props.statusList).map(([key,element]) => {
                 return (
-                    <div className="card" style={{ width:'15rem'}}>
-                <div className="card-body" onClick={() => props.clickHandle({element})}>
-                    <h5 className="card-title">{element}</h5>
-                    <p className="card-text"></p>
+                    <div className={'card mx-2' + (props.selectedCard === key?'text-white bg-info':'')} style={{ minWidth:'100px'}}>
+                <div className="card-body p-1 pointer" onClick={() => props.clickHandle(key)}>
+                    <h4 className="card-title">{key}</h4>
+                    <p className="text-right display-4 mb-1">{element}</p>
                   </div>
                   </div>)
                 })
