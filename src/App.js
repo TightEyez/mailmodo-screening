@@ -24,6 +24,11 @@ class App extends Component {
      }
   }
 
+  handleEvent = (data) => {
+    console.log(data)
+    let selectedList  = this.state.dataArray.filter((st) => st.current_status_code === data.element)
+    this.setState({dumyArray: selectedList})
+  }
   style = {}
 
 
@@ -36,7 +41,7 @@ class App extends Component {
       <div className="row">
         <div className="col-12">
             {/* {  Object.entries(this.state.status).forEach(([key, Value]) => <li>wor</li> )} */}
-            <StatusBoard statusList={this.state.status}/> 
+            <StatusBoard clickHandle={this.handleEvent} statusList={this.state.status}/> 
 
 
 

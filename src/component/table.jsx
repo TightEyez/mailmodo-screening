@@ -32,10 +32,11 @@ class TableView extends Component {
                      <th scope="row">{index+1}</th>
                      <td>{list.awbno}</td>
                      <td>{list.carrier}</td>
-                     <td>{list.from}</td>
-                     <td>{list.to}</td>
+                     <td>{list.from ? list.from: ""}</td>
+                     <td>{list.to ? list.to: ""}</td>
                      <td>{list.pickup_date}</td>
-                     <td>{list.extra_fields.expected_delivery_date}</td>
+                     <td>{list.extra_fields? list.extra_fields.expected_delivery_date: ""}</td>
+                     <td className={list.current_status_code==='DEL' ? 'btn btn-success' : 'btn btn-warning'} >{list.current_status_code==='DEL'?'DELIVERD':"In-TRANSIT"}</td>
                  </tr>
                          )
                  }
