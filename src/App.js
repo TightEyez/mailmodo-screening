@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import  Header from './component/header';
-import TableView from './component/table';
+import TableView from './component/table'; 
+import StatusBoard from './component/statusBoard';
 
 
 class App extends Component {
@@ -27,26 +28,18 @@ class App extends Component {
 
 
   render() { 
+
+    
     return (
     <div>
       <Header />
       <div className="row">
         <div className="col-12">
-          <div className="d-flex p-2 justify-content-center">
-            <div className="card" style={{ width:'15rem'}}>
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
+            {/* {  Object.entries(this.state.status).forEach(([key, Value]) => <li>wor</li> )} */}
+            <StatusBoard statusList={this.state.status}/> 
 
-            <div className="card" style={{ width:'15rem'}}>
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-          </div>
+
+
         </div>
 
         <div className="col-4">
@@ -56,10 +49,9 @@ class App extends Component {
         </div>
         <div className="col-4">
           <div>
-           <TableView />
-           {
-             
-           }
+           
+              <TableView key='1' dummy={this.state.dumyArray}/>
+
 
           </div>
         </div>
@@ -87,8 +79,6 @@ class App extends Component {
 
             data.map((st) => {
               if(st.current_status_code === "DEL") {
-                // let property = { ...this.state }
-                // property.status.DEL = property.DEL + 1
                 const newState = {...this.state.status, DEL: this.state.status.DEL + 1}
                 this.setState({status: newState})
                 // console.log(st)
@@ -118,7 +108,7 @@ class App extends Component {
             this.setState({dumyArray: selectedList})
             this.setState({ dataArray: data })
             // console.log(data)
-        console.log(this.state)
+        console.log(this.state.status)
 
         })
         .catch(error => {
